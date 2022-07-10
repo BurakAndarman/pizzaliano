@@ -1,0 +1,55 @@
+@import url('https://fonts.googleapis.com/css2?family=Tangerine:wght@700&display=swap');
+
+.container{
+    display:flex;
+    justify-content: space-between;
+    align-items:center;
+    padding: 1em 2em;
+    position: sticky;
+    background-color: black;
+    color:white;
+    top:0;
+}
+
+.item{
+    flex:1;
+    display: flex;
+    justify-content: center;
+}
+
+.item:nth-child(2){
+    flex:3;
+}
+
+.logo{
+    font-family: 'Tangerine', cursive;
+    font-size:50px;
+}
+
+.list{
+    display: flex;
+    gap:1.3em;
+}
+
+.listItem{
+    list-style: none;
+}
+
+.cart{
+    position: relative;
+}
+
+.counter{
+    position: absolute;
+    top:-10px;
+    right:-10px;
+    height:20px;
+    width:20px;
+    border-radius: 50%;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    color: black;
+}
