@@ -4,7 +4,7 @@ import Image from 'next/image'
 import { useState } from 'react'
 
 const Product = () => {
-    const [size,setSize]=useState(0);
+  const [size,setSize]=useState(0);
 
   const pizza={
     id:1,
@@ -26,6 +26,60 @@ const Product = () => {
             <span className={styles.price}>${pizza.price[size]}</span>
             <p className={styles.desc}>{pizza.desc}</p>
             <h3 className={styles.choose}>Choose the size</h3>
+            <div className={styles.sizes}>
+              <div className={styles.size} onClick={()=>setSize(0)}>
+                <Image src="/img/size.png" layout='fill' alt=""/>
+                <span className={styles.number}>Small</span>
+              </div>
+              <div className={styles.size} onClick={()=>setSize(1)}>
+                <Image src="/img/size.png" layout="fill" alt=""/>
+                <span className={styles.number}>Medium</span>
+              </div>
+              <div className={styles.size} onClick={()=>setSize(2)}>
+                <Image src="/img/size.png" layout="fill" alt=""/>
+                <span className={styles.number}>Large</span>
+              </div>
+            </div> 
+            <h3 className={styles.choose}>Choose additional ingredients</h3>
+            <div className={styles.options}>
+              <div className={styles.option}>
+                <input 
+                  type="checkbox" 
+                  id="extra" 
+                  name="extra" 
+                  className={styles.checkbox}
+                />
+                <label for="extra">
+                  Extra Ingredients
+                </label>
+              </div>
+              <div className={styles.option}>
+                <input 
+                  type="checkbox" 
+                  id="sauce" 
+                  name="sauce" 
+                  className={styles.checkbox}
+                />
+                <label for="sauce">
+                  Mexican Sauce
+                </label>
+              </div>
+              <div className={styles.option}>
+                <input 
+                  type="checkbox" 
+                  id="cheese" 
+                  name="cheese" 
+                  className={styles.checkbox}
+                />
+                <label for="cheese">
+                  Mozarella Cheese
+                </label>
+              </div>
+            </div>
+            <div className={styles.add}>
+              <input type="number" defaultValue="1" min="1" className={styles.quantity}/>
+              <button className={styles.addButton}>Add to Cart</button>
+            </div>
         </div>
     </div>
   )
