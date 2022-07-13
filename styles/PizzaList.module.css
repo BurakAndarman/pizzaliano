@@ -1,0 +1,34 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel&display=swap');
+
+.container{
+    padding: 20px 10px;
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.wrapper{
+    width: 100%;
+    text-align: center;
+}
+
+.title{
+    font-family: 'Cinzel', serif;
+}
+
+.line{
+    width:30%;
+    height:2px;
+    border:none;
+    background-color: grey;
+}
+
+.list{
+    margin-top: 3em;
+    width:100%;
+    display:flex;    
+    align-items: center;    
+    justify-content: center;
+    flex-wrap:wrap;
+    gap:3em;
+}

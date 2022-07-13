@@ -1,0 +1,39 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel&display=swap');
+
+.container{
+    height:65vh;
+    background-color: black;
+    display: flex;
+    color:white;
+}
+
+.item{
+    flex:1;
+    position:relative;
+    display:flex;
+    padding:4em;
+}
+
+.item:nth-child(2){
+   flex:2;
+}
+
+.card{
+    flex:1;
+    padding:0 2em;
+}
+
+.title{
+    color: burlywood;
+    font-family: 'Cinzel', serif;
+    font-size: 20px;
+}
+
+.text{
+    color:lightgray;
+}
+
+.motto{
+    font-family: 'Cinzel', serif;
+    font-size: 30px;
+}

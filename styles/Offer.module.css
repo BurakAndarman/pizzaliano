@@ -1,0 +1,29 @@
+@import url('https://fonts.googleapis.com/css2?family=Tangerine:wght@700&display=swap');
+
+.container{
+    padding:0 3em;
+    background-color: black;
+    color:white;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.container:hover{
+    transform: scale(1.01);
+    transform-origin: center;
+}
+
+.title{
+    font-size: 42px;
+    font-family: 'Tangerine', cursive;
+}
+
+.price{
+    font-weight: bold;
+}
+
+.imgContainer{
+    margin-bottom:-5em;
+    margin-top:-3em;
+}
