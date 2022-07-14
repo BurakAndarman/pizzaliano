@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Tangerine:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cinzel&display=swap');
 
 .container{
     display:flex;
@@ -33,6 +34,8 @@
 }
 
 .listItem{
+    font-family: 'Cinzel', serif;        
+    font-size: 18px;
     list-style: none;
 }
 
@@ -53,4 +56,39 @@
     align-items: center;
     background-color: white;
     color: black;
+}
+
+.mobileItem{
+    background-color: black;
+    color: white;
+    display:none;
+}
+
+@media screen and (max-width:720px){
+    .item:nth-child(2){
+        display: none;
+    }
+
+    .item:first-child{
+        flex:2;
+    }
+
+    .mobileItem{
+        
+        display:block;
+    }
+
+    .mobileList{
+        font-family: 'Cinzel', serif;        
+        font-size: 18px;
+        display:flex;
+        justify-content: space-around;
+        padding: 0;
+        margin: 0;
+        box-sizing:border-box;
+    }
+
+    .mobileListItem{
+        list-style: none;
+    }
 }

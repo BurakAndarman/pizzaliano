@@ -1,9 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Cinzel&display=swap');
 
 .container{
-    height:90vh;
+    height:92vh;
     background-color:black;    
-    color:white;    
+    color:white;   
 }
 
 .wrapper{
@@ -11,6 +11,7 @@
     display:flex;
     align-items: flex-end;
     justify-content: center;
+    padding:0 1em;
 }
 
 .heroContainer{
@@ -18,7 +19,7 @@
     flex-direction: column;
     align-items: center;
     text-align: center;
-    gap:6em;
+    gap:4em;
 }
 
 .heroHeader{
@@ -29,7 +30,7 @@
 
 .heroText{
     font-size: 20px;
-    margin-top:3em;
+    margin-top: 3em;
 }
 
 .anchor{
@@ -49,4 +50,14 @@
 
 .anchor > a:hover{
     background: #d1a66f;
-  }
+}
+
+
+@media screen and (max-width:720px){
+    .heroHeader{
+        font-size: 40px;
+    }
+    .container{
+        height: 88vh;
+    }
+}

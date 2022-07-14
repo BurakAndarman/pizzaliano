@@ -37,3 +37,29 @@
     font-family: 'Cinzel', serif;
     font-size: 30px;
 }
+
+@media screen and (max-width:720px){
+    .container{
+        height:auto;
+        text-align: center;
+    }
+    .item:first-child{
+        display: none;
+    }
+
+    .item:nth-child(2){
+        flex-direction: column;
+    }
+
+    .title{
+        font-size: 30px;
+    }
+
+    .text{
+        font-size: 20px;
+    }
+
+    .card{
+        padding:0;
+    }
+}

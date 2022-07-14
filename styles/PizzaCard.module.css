@@ -29,3 +29,12 @@
 .desc{
     color:#777;
 }
+
+@media screen and (max-width:480px){
+    .price{
+        font-size:22px;
+    }
+    .desc{
+        font-size:20px;
+    }
+}
