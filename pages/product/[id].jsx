@@ -49,7 +49,7 @@ const Product = () => {
                   name="extra" 
                   className={styles.checkbox}
                 />
-                <label for="extra">
+                <label htmlFor="extra">
                   Extra Ingredients
                 </label>
               </div>
@@ -60,7 +60,7 @@ const Product = () => {
                   name="sauce" 
                   className={styles.checkbox}
                 />
-                <label for="sauce">
+                <label htmlFor="sauce">
                   Mexican Sauce
                 </label>
               </div>
@@ -71,7 +71,7 @@ const Product = () => {
                   name="cheese" 
                   className={styles.checkbox}
                 />
-                <label for="cheese">
+                <label htmlFor="cheese">
                   Mozarella Cheese
                 </label>
               </div>

@@ -1,0 +1,103 @@
+.container{
+    padding: 50px;
+    display: flex;
+    gap:5em;
+}
+
+.left{
+    flex:2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.done{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.inProgress{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    animation: inProgress 1S ease infinite alternate;
+}
+
+@keyframes inProgress{
+    from{
+        opacity: 0.5;
+    }
+    to{
+        opacity: 1;
+    }
+}
+
+.undone{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    opacity:0.5;
+}
+
+.undone > .checkedIcon, .inProgress > .checkedIcon{
+    display: none;
+}
+
+.right{
+    flex:1;
+    display: flex;
+    justify-content: center;
+}
+
+.table{
+    text-align: center;
+    border-spacing:30px;
+    margin-bottom:50px;
+}
+
+.row:nth-child(2){
+    width: 80%;
+    display:flex;
+    justify-content: space-around;
+}
+
+.status{
+    display:flex;
+    flex-direction: column;
+    align-items:center;
+}
+
+.wrapper{
+    background-color: burlywood;
+    padding:50px;
+    width:300px;
+    max-height:300px;
+    border-radius: 3px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.totalText{
+    margin:10px 0;
+    font-size:17px;
+}
+
+.totalTextTitle{
+    font-size: large;
+}
+
+.button{
+    font-family: 'Cinzel', serif;
+    font-weight: bold;
+    margin:10px 0;
+    padding:5px 0;
+    width:100%;
+    background-color: lightgray;
+    border: none;
+    border-radius: 3px;
+    transition: all 0.6s ease;
+}
+
+
