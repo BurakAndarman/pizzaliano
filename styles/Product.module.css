@@ -112,3 +112,28 @@
 .addButton:hover{
     background-color: #d1a66f;
 }
+
+@media screen and (max-width:720px){
+    .container{
+        height: auto;
+        flex-direction: column;
+        margin:2em 0;
+    }
+
+    .right{
+        padding:0 2em;
+    }
+
+    .imgContainer{
+        width: 70vw;
+        height: 70vw;
+    }
+
+    .add{
+        margin-top: 3em;
+    }
+
+    .addButton{
+        height: 3em;
+    }
+}
