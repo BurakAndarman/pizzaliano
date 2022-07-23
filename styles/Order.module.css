@@ -100,4 +100,53 @@
     transition: all 0.6s ease;
 }
 
+@media screen and (max-width:720px){
+    .container{
+        display: flex;
+        flex-direction: column;
+    }
 
+    .trTitle{
+        display:none;
+    }
+
+    .id,.name,.address,.total{
+        font-size:18px;
+    }
+
+    .tr{
+        display:flex;
+        flex-direction:column;
+        gap:.5em;
+    }
+    
+    .id::before{
+        content:"Order ID: ";
+        font-weight:bold;
+    }
+
+    .name::before{
+        content:"Customer: ";
+        font-weight:bold;
+    }
+    
+    .address::before{
+        content:"Address: ";
+        font-weight:bold;
+    }
+
+    .total::before{
+        content:"Total: ";
+        font-weight:bold;
+    }
+
+    .row:nth-child(2){
+        display: flex;
+        flex-direction: column;
+        gap:2em;
+    }
+
+    .checkedIcon{
+        margin-top:.5em;
+    }
+}

@@ -84,4 +84,50 @@
     .container{
         flex-direction: column;
     }
+
+    .table{
+        display:flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .tableHead{
+        display:none;
+    }
+
+    .tr{
+        display:flex;
+        flex-direction: column;
+        margin-bottom:4em;
+        gap:.4em;
+    }
+
+    .name,.total{
+        font-size: 22px;
+    }
+
+    .imgContainer{
+        width:150px;
+        height:150px;
+    }
+
+    .extras,.price,.quantity{
+        font-size: 18px;
+    }
+
+    .extras::before{
+        content:"Extras: ";
+        font-weight: bold;
+    }
+
+    .price::before{
+        content:"Price: ";
+        font-weight: bold;
+    }
+
+    .quantity::before{
+        content:"Quantity: ";
+        font-weight: bold;
+    }
 }

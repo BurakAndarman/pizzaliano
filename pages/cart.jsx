@@ -7,8 +7,8 @@ const Cart = () => {
     <div className={styles.container}>
         <div className={styles.left}>
             <table className={styles.table}>
-                <thead>
-                    <tr>
+                <thead className={styles.tableHead}>
+                    <tr className={styles.trTitle}>
                         <th>Product</th>
                         <th>Name</th>
                         <th>Extras</th>
@@ -17,8 +17,8 @@ const Cart = () => {
                         <th>Total</th>
                     </tr>
                 </thead>
-                <tbody>
-                    <tr>
+                <tbody className={styles.tableBody}>
+                    <tr className={styles.tr}>
                         <td className={styles.imgColumn}>
                             <div className={styles.imgContainer}>
                                 <Image src="/img/pizza.png" alt="" layout='fill' objectFit="cover"/>
@@ -39,10 +39,10 @@ const Cart = () => {
                             <span className={styles.quantity}>1</span>
                         </td>
                         <td>
-                            <span className={styles.total}>$19.90</span>
+                            <span className={styles.total}>$39.80</span>
                         </td>
                     </tr>
-                    <tr>
+                    <tr className={styles.tr}>
                         <td className={styles.imgColumn}> 
                             <div className={styles.imgContainer}>
                                 <Image src="/img/pizza.png" alt="" layout='fill' objectFit="cover"/>
@@ -63,10 +63,10 @@ const Cart = () => {
                             <span className={styles.quantity}>1</span>
                         </td>
                         <td>
-                            <span className={styles.total}>$19.90</span>
+                            <span className={styles.total}>$39.80</span>
                         </td>
                     </tr>
-                    <tr>
+                    <tr className={styles.tr}>
                         <td className={styles.imgColumn}>
                             <div className={styles.imgContainer}>
                                 <Image src="/img/pizza.png" alt="" layout='fill' objectFit="cover"/>
@@ -87,7 +87,7 @@ const Cart = () => {
                             <span className={styles.quantity}>1</span>
                         </td>
                         <td>
-                            <span className={styles.total}>$19.90</span>
+                            <span className={styles.total}>$39.80</span>
                         </td>
                     </tr>
                 </tbody>
