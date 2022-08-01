@@ -3,7 +3,7 @@ import styles from '../styles/PizzaList.module.css'
 import PizzaCard from './PizzaCard'
 import Offer from './Offer'
 
-const PizzaList = () => {
+const PizzaList = ({pizzaList}) => {
   return (
     <div className={styles.container} id="pizzaList">
       <div className={styles.wrapper}>
@@ -19,14 +19,9 @@ const PizzaList = () => {
         <h1 className={styles.title}>Pızzas</h1>
         <hr className={styles.line}/>
         <div className={styles.list}>
-            <PizzaCard/>
-            <PizzaCard/>
-            <PizzaCard/>
-            <PizzaCard/>
-            <PizzaCard/>
-            <PizzaCard/>
-            <PizzaCard/>
-            <PizzaCard/>
+            {pizzaList.map((pizza)=>(
+              <PizzaCard key={pizza._id} pizza={pizza}/>
+            ))}
         </div>
       </div>
     </div>
