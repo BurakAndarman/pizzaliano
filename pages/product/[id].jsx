@@ -3,12 +3,41 @@ import styles from '../../styles/Product.module.css'
 import Image from 'next/image'
 import { useState } from 'react'
 import axios from 'axios'
+import { useDispatch } from 'react-redux'
+import { addProduct } from '../../redux/cartSlice'
 
 const Product = ({pizza}) => {
+  const [price,setPrice]=useState(pizza.prices[0]);
   const [size,setSize]=useState(0);
+  const [quantity,setQuantity]=useState(1);
+  const [extras,setExtras]=useState([]);
+  const dispatch=useDispatch();
+
+  const handlePrice=(number)=>{
+    setPrice(price+number);
+  }
+
+  const handleSize=(sizeIndex)=>{
+    const difference = pizza.prices[sizeIndex]-pizza.prices[size];
+    setSize(sizeIndex);
+    handlePrice(difference);
+  }
 
   const handleChange=(e,option)=>{
-    //Buradan devam edilecek
+    const checked=e.target.checked;
+
+    if(checked){
+      setExtras(prev=>[...prev,option]);
+      handlePrice(option.price);
+    }
+    else{
+      setExtras(extras.filter((extra)=> extra._id !== option._id));
+      handlePrice(-option.price);
+    }
+  }
+
+  const handleClick=()=>{   
+    dispatch(addProduct({...pizza,extras,quantity,price}))
   }
 
   return (
@@ -20,19 +49,19 @@ const Product = ({pizza}) => {
         </div>
         <div className={styles.right}>
             <h1 className={styles.title}>{pizza.title}</h1>
-            <span className={styles.price}>${pizza.prices[size]}</span>
+            <span className={styles.price}>${price}</span>
             <p className={styles.desc}>{pizza.desc}</p>
             <h3 className={styles.choose}>Choose the size</h3>
             <div className={styles.sizes}>
-              <div className={styles.size} onClick={()=>setSize(0)}>
+              <div className={styles.size} onClick={()=>handleSize(0)}>
                 <Image src="/img/size.png" layout='fill' alt=""/>
                 <span className={styles.number}>Small</span>
               </div>
-              <div className={styles.size} onClick={()=>setSize(1)}>
+              <div className={styles.size} onClick={()=>handleSize(1)}>
                 <Image src="/img/size.png" layout="fill" alt=""/>
                 <span className={styles.number}>Medium</span>
               </div>
-              <div className={styles.size} onClick={()=>setSize(2)}>
+              <div className={styles.size} onClick={()=>handleSize(2)}>
                 <Image src="/img/size.png" layout="fill" alt=""/>
                 <span className={styles.number}>Large</span>
               </div>
@@ -55,8 +84,8 @@ const Product = ({pizza}) => {
               ))}
             </div>
             <div className={styles.add}>
-              <input type="number" defaultValue="1" min="1" className={styles.quantity}/>
-              <button className={styles.addButton}>Add to Cart</button>
+              <input type="number" defaultValue="1" min="1" className={styles.quantity} onChange={(e)=>setQuantity(Number(e.target.value))}/>
+              <button className={styles.addButton} onClick={()=>handleClick()}>Add to Cart</button>
             </div>
         </div>
     </div>
@@ -65,7 +94,7 @@ const Product = ({pizza}) => {
 
 export const getServerSideProps = async ({params})=>{
   const res=await axios.get(`http://localhost:3000/api/products/${params.id}`)
-  return{
+  return {
     props:{
       pizza:res.data
     }
