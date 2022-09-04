@@ -1,26 +1,27 @@
-import dbConnect from "../../../utils/mongo"
-import Product from "../../../models/Product"
+import dbConnect from "../../../util/mongo";
+import Order from "../../../models/Order";
 
 export default async function handler(req, res) {
     const {method}=req;
 
-    await dbConnect()
+    await dbConnect();
 
     if(method==="GET"){
         try {
-            const products=await Product.find();
-            res.status(200).json(products)
+            const orders=await Order.find();
+            res.status(200).json(orders)
         } catch (error) {
             res.status(500).json(error);
         }
     }
     if(method==="POST"){
         try {
-            const product=await Product.create(req.body) 
-            res.status(201).json(product)
+            const order=await Order.create(req.body)
+            res.status(201).json(order)
 
         } catch (error) {
             res.status(500).json(error);
         }
     }
+
 }
