@@ -1,4 +1,4 @@
-import dbConnect from "../../../util/mongo";
+import dbConnect from "../../../utils/mongo";
 import Order from "../../../models/Order";
 
 export default async function handler(req, res) {
@@ -18,7 +18,6 @@ export default async function handler(req, res) {
         try {
             const order=await Order.create(req.body)
             res.status(201).json(order)
-
         } catch (error) {
             res.status(500).json(error);
         }
