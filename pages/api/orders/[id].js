@@ -16,7 +16,9 @@ export default async function handler(req, res) {
     }
     if(method==="PUT"){
         try {
-            const order=await Order.create(req.body) 
+            const order=await Order.findByIdAndUpdate(id , req.body, {
+                new:true
+            });
             res.status(201).json(order)
 
         } catch (error) {
@@ -25,8 +27,8 @@ export default async function handler(req, res) {
     }
     if(method==="DELETE"){
         try {
-            const order=await Order.create(req.body) 
-            res.status(201).json(order)
+            await Order.findByIdAndDelete(id) 
+            res.status(201).json("The order has been deleted.")
 
         } catch (error) {
             res.status(500).json(error);

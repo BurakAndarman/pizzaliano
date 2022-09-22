@@ -11,10 +11,12 @@ import {
 } from "@paypal/react-paypal-js";
 import axios from "axios";
 import {useRouter} from "next/router"
+import OrderDetail from '../components/OrderDetail'
 
 const Cart = () => {
   const cart = useSelector((state)=>state.cart);
   const [open,setOpen]=useState(false);
+  const [cash,setCash]=useState(false);
   const amount = cart.total;
   const currency = "USD";
   const style = {"layout":"vertical"};
@@ -154,7 +156,8 @@ const Cart = () => {
                 {
                     open ? (                          
                         <div className={styles.paymentMethods}>
-                            <button className={styles.payButton}>Cash On Delıvery</button>
+                            <button className={styles.payButton}
+                                    onClick={()=>setCash(true)}>Cash On Delıvery</button>
                             <PayPalScriptProvider
                                 options={{
                                     "client-id": "ARggX2MN1vYXn0665roG79UJohjMFMGLdJa5Zn6UfF5mN7XNfODOQW9E1Mdd9CNl143S6Yt8MM1nRxP-",
@@ -175,6 +178,9 @@ const Cart = () => {
                 }
             </div>
         </div>
+        {cash && (
+            <OrderDetail total={cart.total} createOrder={createOrder}/>
+        )}
     </div>
   )
 }
