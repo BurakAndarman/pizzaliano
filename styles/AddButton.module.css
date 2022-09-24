@@ -1,0 +1,15 @@
+.mainAddButton{
+    font-family: 'Cinzel', serif;
+    font-weight: bold;
+    border:none;
+    padding: 5px 10px;
+    margin:2em;
+    border-radius: 3px;
+    width: fit-content;
+    cursor: pointer;
+    background-color: burlywood;
+    transition: all 0.6s ease;
+}
+.mainAddButton:hover{
+    background: #d1a66f;
+}
