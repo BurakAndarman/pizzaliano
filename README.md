@@ -1,4 +1,4 @@
-# pizzaliano
+# pizzaliano 🍕
 
 A pizza ordering web application
 
